@@ -1,0 +1,25 @@
+1. Paste script listed below into windows command Prompt (Assuming AWS CLI is installed:
+
+aws ecr create-repository --repository-name dev-repo --region us-east-1 
+
+2. Copy and save the output
+
+{
+    "repository": {
+        "repositoryArn": "arn:aws:ecr:us-east-1:730335572176:repository/dev-repo",
+        "registryId": "730335572176",
+        "repositoryName": "dev-repo",
+        "repositoryUri": "730335572176.dkr.ecr.us-east-1.amazonaws.com/dev-repo",
+        "createdAt": "2024-06-05T13:08:32.097000-04:00",
+        "imageTagMutability": "MUTABLE",
+        "imageScanningConfiguration": {
+            "scanOnPush": false
+        },
+        "encryptionConfiguration": {
+            "encryptionType": "AES256"
+        }
+    }
+}
+
+
+

@@ -1,0 +1,6 @@
+Microsoft Windows [Version 10.0.22631.3593]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\yaden>git config --global user.name yadenuga
+
+C:\Users\yaden>git config --global user.email yadenuga@yahoo.com

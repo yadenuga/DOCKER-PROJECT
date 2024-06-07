@@ -1,0 +1,48 @@
+(1) To build Docker image from Dockerfile ==> docker build -t jupiter .
+
+
+OUTPUT
+=> [internal] load build definition from Dockerfile                                                                             0.0s
+ => => transferring dockerfile: 721B                                                                                             0.0s 
+ => [internal] load metadata for docker.io/library/amazonlinux:latest                                                            2.9s 
+ => [auth] library/amazonlinux:pull token for registry-1.docker.io                                                               0.0s
+ => [internal] load .dockerignore                                                                                                0.1s
+ => => transferring context: 2B                                                                                                  0.0s 
+ => [1/7] FROM docker.io/library/amazonlinux:latest@sha256:0d172f83b07323d8a8a08ea2242b7d64eb676f013eba269a158f229ce062a24f     28.2s 
+ => => resolve docker.io/library/amazonlinux:latest@sha256:0d172f83b07323d8a8a08ea2242b7d64eb676f013eba269a158f229ce062a24f      0.0s
+ => => sha256:0d172f83b07323d8a8a08ea2242b7d64eb676f013eba269a158f229ce062a24f 547B / 547B                                       0.0s 
+ => => sha256:130e2b842304783d910b17355968b433b99ad6a8eb2ecd0fcc31c6b995c9f110 529B / 529B                                       0.0s 
+ => => sha256:fdd3227580370bd99109cb6f8a7c327f59dc5c9d81dfc3c78279c4e7d905d14d 1.48kB / 1.48kB                                   0.0s 
+ => => sha256:f6175f9c503b77e6cec852666a7133ed71ff16fd23342bcc58c01fa48948b06f 52.32MB / 52.32MB                                 9.7s 
+ => => extracting sha256:f6175f9c503b77e6cec852666a7133ed71ff16fd23342bcc58c01fa48948b06f                                       17.7s
+ => [2/7] RUN yum update -y &&     yum install -y httpd &&     yum search wget &&     yum install wget -y &&     yum install u  47.3s
+ => [3/7] RUN cd /var/www/html                                                                                                   0.5s
+ => [4/7] RUN wget https://github.com/azeezsalu/techmax/archive/refs/heads/main.zip                                              2.3s
+ => [5/7] RUN unzip main.zip                                                                                                     1.1s
+ => [6/7] RUN cp -r techmax-main/* /var/www/html/                                                                                0.8s
+ => [7/7] RUN rm -rf techmax-main main.zip                                                                                       0.7s 
+ => exporting to image                                                                                                           2.2s 
+ => => exporting layers                                                                                                          2.1s 
+ => => writing image sha256:697f1af17f92e53e037854469963d6b63d5f8cfff83f473e8dab79fb374aad63                                     0.0s 
+ => => naming to docker.io/library/jupiter    
+
+
+(2) To view/list Docker Image created ==> docker image ls       
+
+(3) To run Docker Image/Container ==> docker run -dp 80:80 <IMAGE>  
+docker run -dp 80:80 jupiter
+d=detach p=port 80:80=httpd port   
+
+(4) To view the Jupiter website ==> Open web browser and type: http://localhost:80
+
+(5) To see the container running ==> docker ps
+
+(6) To stop the container ==> docker stop <CONTAINER ID>
+docker stop 8dc9fc3c5fb1 
+
+(7) To login to DockerHub online, ==>  docker login -u yadenuga
+
+(8) To give docker image a new name ==> docker tag yadenuga/jupiter 
+
+(9) To push docker image to dockerhub online ==> push yadenuga/Jupiter
+

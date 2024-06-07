@@ -1,0 +1,21 @@
+aws ecr create-repository --repository-name jupiter --region us-east-1 
+
+
+{
+    "repository": {
+        "repositoryArn": "arn:aws:ecr:us-east-1:730335572176:repository/jupiter",
+        "registryId": "730335572176",
+        "repositoryName": "jupiter",
+        "repositoryUri": "730335572176.dkr.ecr.us-east-1.amazonaws.com/jupiter",
+        "createdAt": "2024-05-09T12:44:07.751000-04:00",
+        "imageTagMutability": "MUTABLE",
+        "imageScanningConfiguration": {
+            "scanOnPush": false
+        },
+        "encryptionConfiguration": {
+            "encryptionType": "AES256"
+        }
+    }
+}
+
+
